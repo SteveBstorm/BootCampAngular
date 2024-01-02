@@ -7,8 +7,9 @@ import { Observable } from 'rxjs';
   styleUrl: './demo1.component.scss'
 })
 export class Demo1Component {
-  myProp! : number[]
-  myString : string = "salut"
+   myProp: number[] = []
+   myString : string | null = "salut"
+  truc : any = {nom : "steve", grade : 1} //any à utiliser avec parcimonie (la pote de modération)
 
  /*
   Propriété Cycle de vie :
@@ -19,11 +20,24 @@ export class Demo1Component {
  */
 
   add() {
-    console.log(this.myString.length);
+     console.log(this.myString?.length);
 
-    this.myProp.push(5)
+     this.myProp.push(5)
+    this.myString = null
+    //this.truc.push("hello")
+  }
 
+  /*
+    Code pour la démo Attribute Binding
+  */
+  monImage : string = "https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg"
 
+  value : number = 5
+  plus() {
+    this.value++
+  }
+  moins() {
+    this.value--
   }
 
 }

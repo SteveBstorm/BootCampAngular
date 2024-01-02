@@ -1,3 +1,18 @@
 <h3>Binding</h3>
+<!-- Binding One Way : Lecture de la valeur d'une propriété  : lecture seule-->
 <p>Valeur de myProp : {{myProp | json}}</p>
 <b><button (click)="add()">click</button></b>
+<!-- Binding Two ways : Affectation de valeur à un propriété : Lecture-écriture -->
+<p>Valeur de myString : {{myString}}</p>
+<p><input type="text" [(ngModel)]="myString"></p>
+
+<!-- Attribute binding : Affectation d'une valeur ou d'une expression booléene à n'importe quel attribut HTML -->
+<p><img [src]="monImage" width="250px"></p>
+
+<p [ngClass]="value > 5 ? 'red' : value < 3 ? 'green' : ''">
+  Valeur : {{value}}
+  <button (click)="moins()" [disabled]="value < 1">-</button>
+  <button (click)="plus()" [disabled]="value >= 10">+</button>
+</p>
+
+<!-- Event Binding  : déclenchement d'une méthode sous l'effet d'un event -->
