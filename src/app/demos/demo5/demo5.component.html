@@ -1,0 +1,4 @@
+<h3>Fake auth (service & injection)</h3>
+<p>Etat de connexion : {{isConnected}}</p>
+<button *ngIf="!isConnected" (click)="login()">Connexion</button>
+<button *ngIf="isConnected" (click)="logout()">Déconnexion</button>

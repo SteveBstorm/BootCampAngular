@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Link } from './Link.model';
 
 @Component({
@@ -8,17 +8,10 @@ import { Link } from './Link.model';
 })
 export class NavbarComponent {
 
-  linkList! : Link[]
+  @Input() linkList! : Link[]
 
   ngOnInit() {
-    this.linkList = [
-      {title : "Home", url : "home"},
-      {title : "Démos", children : [
-        {title : "Bindings", url: "demos/demo1"},
-        {title : "Directives", url: "demos/demo2"},
-        {title : "Custom Pipes", url: "demos/demo3"},
-      ]}
-    ]
+
   }
 
   switchChildrenVisible(index : number) {

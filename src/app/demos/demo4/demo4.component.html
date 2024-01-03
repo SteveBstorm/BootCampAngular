@@ -1,0 +1,15 @@
+<h3>&NotSquareSuperset; Input / Output</h3>
+
+
+  <fieldset >
+    <legend>Composant Enfant</legend>
+    <app-children [valeur]="myProp" (reponseEvent)="getResponse($event)">
+    <p style="background-color: red;">&approxeq;</p>
+
+  </app-children>
+</fieldset>
+
+<p>Réponse de l'enfant : {{reponseDeChildren}}</p>
+
+
+
