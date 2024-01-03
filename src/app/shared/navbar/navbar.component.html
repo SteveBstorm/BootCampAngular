@@ -1,1 +1,21 @@
-<p>navbar works!</p>
+<ul>
+  @for (link of linkList; track $index) {
+    <li>
+      <a [ngClass]="link.children ? 'category' : ''"
+         [routerLink]="link.url"
+
+         >
+        <span (click)="switchChildrenVisible($index)">{{link.title}}</span>
+        @if(link.children && link.isChildrenVisible) {
+          <ul>
+            @for(subLink of link.children; track $index){
+              <li>
+                <a [routerLink]="subLink.url">{{subLink.title}}</a>
+              </li>
+            }
+          </ul>
+        }
+      </a>
+    </li>
+  }
+</ul>

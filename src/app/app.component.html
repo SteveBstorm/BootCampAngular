@@ -1,5 +1,13 @@
-<h1>Hello {{title}}</h1>
-<a routerLink="demos">Accès aux démos</a>
-<app-navbar></app-navbar>
-<hr />
-<router-outlet></router-outlet>
+<div class="header">
+  <h1>Hello {{title}}</h1>
+</div>
+<div class="content">
+  <div class="nav">
+    <app-navbar></app-navbar>
+  </div>
+  <div class="main">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+
