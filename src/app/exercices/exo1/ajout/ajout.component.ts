@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Animal } from '../../animal.model';
 import { AnimalerieService } from '../animalerie.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-ajout',
@@ -16,7 +17,10 @@ export class AjoutComponent {
 
   pere! : string
   mere! : string
-  constructor(private service : AnimalerieService){}
+  constructor(
+    private service : AnimalerieService,
+    private router : Router
+    ){}
 
   creation() {
     this.service.ajout(this.newAnimal)
@@ -34,6 +38,7 @@ export class AjoutComponent {
     this.newAnimal.parents?.push(this.mereList.find(x => x.nom == this.mere) ?? {})
     console.log(this.newAnimal)
     this.service.ajout(this.newAnimal)
+    this.router.navigate(['./exos/exo1'])
   }
 
   test() {

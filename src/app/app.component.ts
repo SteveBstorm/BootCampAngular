@@ -17,6 +17,7 @@ export class AppComponent {
       {title : "Custom Pipes", url: "demos/demo3"},
       {title : "@Input/@Output", url: "demos/demo4"},
       {title : "Service & Injection", url: "demos/demo5"},
+      {title : "Routing", url: "demos/demo6"},
     ]},
     {title: "Exercices", children : [
       {title : "Animalerie", url: "exos/exo1"}

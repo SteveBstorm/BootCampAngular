@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Signal, signal } from '@angular/core';
 import { Demo1Component } from '../../demos/demo1/demo1.component';
 import { DemosModule } from '../../demos/demos.module';
 
@@ -29,4 +29,5 @@ export class FakeauthService {
   logout() {
     this.isConnected = false
   }
+
 }

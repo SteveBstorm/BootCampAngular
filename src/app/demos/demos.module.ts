@@ -12,6 +12,8 @@ import { Demo4Component } from './demo4/demo4.component';
 import { ChildrenComponent } from './demo4/children/children.component';
 import { Demo5Component } from './demo5/demo5.component';
 import { FakeauthService } from '../shared/services/fakeauth.service';
+import { Demo6Component } from './demo6/demo6.component';
+import { TargetComponent } from './demo6/target/target.component';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { FakeauthService } from '../shared/services/fakeauth.service';
     Demo3Component,
     Demo4Component,
     ChildrenComponent,
-    Demo5Component
+    Demo5Component,
+    Demo6Component,
+    TargetComponent
   ],
   imports: [
     CommonModule,
