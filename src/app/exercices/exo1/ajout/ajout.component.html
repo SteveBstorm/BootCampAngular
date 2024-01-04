@@ -1,0 +1,40 @@
+<h4>Ajouter un animal</h4>
+
+<p>
+  Nom : <input type="text" [(ngModel)]="newAnimal.nom">
+</p>
+<p>
+  Age : <input type="number" [(ngModel)]="newAnimal.age">
+</p>
+<p>
+  Couleur : <input type="text" [(ngModel)]="newAnimal.couleur">
+</p>
+<p>
+  Sexe : <select [(ngModel)]="newAnimal.sexe">
+            <option value="male">Mâle</option>
+            <option value="femelle">Femelle</option>
+         </select>
+</p>
+<p>
+  Race : <select [(ngModel)]="newAnimal.race" (change)="choixRace()">
+            <option selected>Faites votre choix</option>
+            <option value="chat">Chat</option>
+            <option value="chien">Chien</option>
+            <option value="ornithorynque">Ornithorynque</option>
+            <option value="hamster">Hamster</option>
+         </select>
+</p>
+<p>
+  Papa : <select [(ngModel)]="pere" (change)="test()">
+    <option>Faites votre choix</option>
+    <option *ngFor="let p of pereList" [value]="p.nom">{{p.nom}}</option>
+  </select>
+</p>
+<p>
+  Maman : <select [(ngModel)]="mere" >
+    <option>Faites votre choix</option>
+    <option *ngFor="let m of mereList" [value]="m.nom">{{m.nom}}</option>
+  </select>
+</p>
+
+<button (click)="validation()">Valider</button>

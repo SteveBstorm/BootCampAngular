@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './navbar/navbar.component';
 import { EurtobtcPipe } from './pipes/eurtobtc.pipe';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -13,11 +14,13 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ],
   exports : [
     NavbarComponent,
-    EurtobtcPipe
+    EurtobtcPipe,
+    FormsModule
   ]
 })
 export class SharedModule { }

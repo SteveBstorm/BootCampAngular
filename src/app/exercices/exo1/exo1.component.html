@@ -1,0 +1,20 @@
+<h3>Animalerie V1</h3>
+<a routerLink="../../exos/ajoutAnimal">Ajouter</a>
+<div class="content">
+  <span>
+  <fieldset>
+    <legend>Liste des animaux</legend>
+    <ul>
+      @for (a of list; track $index) {
+        <li>
+          {{a.nom}} - {{a.race}} <button (click)="detail(a.nom ?? '')">Détails</button>
+        </li>
+      }
+    </ul>
+    <p>Marcel <button (click)="detail('marcel')">Détails</button></p>
+  </fieldset>
+  </span>
+  <span>
+    <app-detail [nom]="selectedName"></app-detail>
+  </span>
+</div>

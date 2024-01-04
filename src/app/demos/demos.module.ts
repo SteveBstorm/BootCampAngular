@@ -28,7 +28,7 @@ import { FakeauthService } from '../shared/services/fakeauth.service';
     CommonModule,
     DemosRoutingModule,
     SharedModule,
-    FormsModule
+
   ],
   providers : [
     //FakeauthService

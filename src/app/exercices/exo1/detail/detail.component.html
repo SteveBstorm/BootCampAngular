@@ -1,0 +1,11 @@
+@if(animalDetail) {
+  <p>Nom : {{animalDetail.nom}}</p>
+  <p>Race : {{animalDetail.race}}</p>
+  <p>Sexe : {{animalDetail.sexe}}</p>
+  <p>Age : {{animalDetail.age}}</p>
+  <p>Nom du père : {{pere?.nom}}</p>
+  <p>Nom de la mère : {{mere?.nom}}</p>
+}
+@else {
+  <h3 style="color:red;">Une erreur s'est produite</h3>
+}
