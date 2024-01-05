@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FakeauthService } from '../../shared/services/fakeauth.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -10,8 +11,21 @@ import { FakeauthService } from '../../shared/services/fakeauth.service';
 export class HomeComponent {
 
   isConnected! : boolean
-  constructor(private service : FakeauthService){
-    this.isConnected = service.isConnected
+
+  mySub! : Subscription
+  constructor(private service : FakeauthService){}
+
+  ngOnInit() {
+    this.mySub = this.service.isConnectedSubject.subscribe({
+      next : (data : boolean) => this.isConnected = data
+    })
+  }
+
+  ngOnDestroy(): void {
+    //Called once, before the instance is destroyed.
+    //Add 'implements OnDestroy' to the class.
+    this.mySub.unsubscribe()
+    console.log("destroy")
   }
 
 

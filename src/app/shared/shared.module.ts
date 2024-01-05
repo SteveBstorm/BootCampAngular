@@ -5,6 +5,9 @@ import { EurtobtcPipe } from './pipes/eurtobtc.pipe';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { AuthComponent } from './auth/auth.component';
+import { HttpClientModule } from '@angular/common/http';
+import { RegisterComponent } from './auth/register/register.component';
 
 
 
@@ -12,17 +15,23 @@ import { NotfoundComponent } from './notfound/notfound.component';
   declarations: [
     NavbarComponent,
     EurtobtcPipe,
-    NotfoundComponent
+    NotfoundComponent,
+    AuthComponent,
+    RegisterComponent
   ],
   imports: [
     CommonModule,
     RouterModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   exports : [
     NavbarComponent,
     EurtobtcPipe,
-    FormsModule
+    FormsModule,
+    AuthComponent,
+    HttpClientModule,
+    RegisterComponent
   ]
 })
 export class SharedModule { }

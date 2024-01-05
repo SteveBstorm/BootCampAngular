@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Link } from './shared/navbar/Link.model';
+import { FakeauthService } from './shared/services/fakeauth.service';
 
 @Component({
   selector: 'app-root',
@@ -23,4 +24,6 @@ export class AppComponent {
       {title : "Animalerie", url: "exos/exo1"}
     ]}
   ]
+
+
 }
