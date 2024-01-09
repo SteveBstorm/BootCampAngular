@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FakeauthService } from '../../shared/services/fakeauth.service';
 import { Subscription } from 'rxjs';
+import { AuthService } from '../../shared/services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +14,9 @@ export class HomeComponent {
   isConnected! : boolean
 
   mySub! : Subscription
-  constructor(private service : FakeauthService){}
+  constructor(private service : FakeauthService, private auth : AuthService){
+    this.auth.getOne()
+  }
 
   ngOnInit() {
     this.mySub = this.service.isConnectedSubject.subscribe({

@@ -1,3 +1,4 @@
+import { AuthService } from './shared/services/auth.service';
 import { Component } from '@angular/core';
 import { Link } from './shared/navbar/Link.model';
 import { FakeauthService } from './shared/services/fakeauth.service';
@@ -25,5 +26,15 @@ export class AppComponent {
     ]}
   ]
 
+  status! : boolean
+  constructor(private AuthService : AuthService){
+    this.AuthService.statusSubject.subscribe({
+      next : (data : boolean) => this.status = data
+    })
+  }
+
+  logout() {
+    this.AuthService.logout()
+  }
 
 }

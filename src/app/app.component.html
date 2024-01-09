@@ -1,7 +1,13 @@
 <div class="header">
   <span>Bootcamp Demo Angular</span>
   <span>
-  <app-auth></app-auth></span>
+    @if(!status){
+      <app-auth></app-auth>
+    }
+    @else {
+      <button (click)="logout()">Déconnexion</button>
+    }
+  </span>
 </div>
 <div class="content">
   <div class="nav">
