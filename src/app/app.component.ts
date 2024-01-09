@@ -13,6 +13,7 @@ export class AppComponent {
 
   listLien : Link[] = [
     {title : "Home", url : "home"},
+    {title : "Liste Employés", url : "list/S"},
     {title : "Démos", children : [
       {title : "Bindings", url: "demos/demo1"},
       {title : "Directives", url: "demos/demo2"},

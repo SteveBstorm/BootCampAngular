@@ -7,13 +7,15 @@ import { HomeComponent } from './components/home/home.component';
 import { SharedModule } from './shared/shared.module';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { tokenInterceptor } from './shared/interceptor/token.interceptor';
+import { ListComponent } from './components/list/list.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,

@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 import * as jwt_decode from 'jwt-decode'
 
@@ -54,12 +54,10 @@ export class AuthService {
     })
   }
 
-  getAll() {
+  getAll() : Observable<any[]> {
     // let myHeaders : HttpHeaders =
     //   new HttpHeaders({"authorization" : "bearer "+ localStorage.getItem("token")})
-    this.client.get<any>(this.url+"employees"/*, {headers : myHeaders}*/).subscribe({
-      next : (data : any) => console.log(data)
-    })
+    return this.client.get<any[]>(this.url+"employees"/*, {headers : myHeaders}*/)
   }
 
   getOne() {

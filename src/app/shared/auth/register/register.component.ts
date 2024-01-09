@@ -16,7 +16,4 @@ export class RegisterComponent {
     this.service.register(this.login, this.pwd)
   }
 
-  getAll() {
-    this.service.getAll()
-  }
 }

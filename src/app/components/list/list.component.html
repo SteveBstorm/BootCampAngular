@@ -1,0 +1,9 @@
+<h3>Liste employés</h3>
+<!-- {{list}} -->
+<div style="overflow-y: scroll; max-height: 50%;">
+<ul>
+@for (e of list; track $index) {
+  <li>{{e.name}}</li>
+}
+</ul>
+</div>
